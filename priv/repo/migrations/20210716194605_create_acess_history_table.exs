@@ -3,9 +3,9 @@ defmodule DoorApi.Repo.Migrations.CreateAcessHistoryTable do
 
   def change do
     create table(:acess_history) do
-      add :user_id, references(:users)
-      add :zone_id, references(:zones)
-      add :point_id, references(:points)
+      add :user_id, references(:users, type: :binary_id, on_upadte: :update_all, on_delete: :delete_all)
+      add :zone_id, references(:zones, type: :binary_id, on_upadte: :update_all, on_delete: :delete_all)
+      add :point_id, references(:points, type: :binary_id, on_upadte: :update_all, on_delete: :delete_all)
       add :was_suceed, :boolean
 
       timestamps()

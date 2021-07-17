@@ -16,5 +16,6 @@ defmodule DoorApi.Repo.Migrations.CreateUsersTable do
 
     create unique_index(:users, [:email])
     create unique_index(:users, [:acess_code])
+
   end
 end

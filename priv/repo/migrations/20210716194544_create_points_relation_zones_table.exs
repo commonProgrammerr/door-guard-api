@@ -3,8 +3,8 @@ defmodule DoorApi.Repo.Migrations.CreatePointsRelationZonesTable do
 
   def change do
     create table(:points_zones, primary_key: false) do
-      add :zone_id, references(:zones)
-      add :point_id, references(:points)
+      add :zone_id, references(:zones, type: :binary_id, on_upadte: :update_all, on_delete: :delete_all)
+      add :point_id, references(:points, type: :binary_id, on_upadte: :update_all, on_delete: :delete_all)
       add :is_allowed, :boolean
 
       timestamps()
